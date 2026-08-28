@@ -20,7 +20,9 @@ python -m http.server 8000
 
 ## 部署到 GitHub Pages / Deploy to GitHub Pages
 
-1. 新建一个 GitHub 仓库（名字随意，如 `portfolio`）。
+用户名：`heikaaaaaaaaaa`。仓库名按你新建时取的为准，下面以 `portfolio` 为例（若你打算沿用 `git` 仓库，把两处 `portfolio` 改成 `git` 即可，注意该仓库需是公开仓库才能开 Pages）。
+
+1. 在 GitHub 新建一个**公开**仓库，名字随意（如 `portfolio`）。
 2. 把本目录内容推上去：
 
 ```bash
@@ -29,31 +31,28 @@ git init
 git add .
 git commit -m "Portfolio website"
 git branch -M main
-git remote add origin https://github.com/<你的用户名>/portfolio.git
+git remote add origin https://github.com/heikaaaaaaaaaa/portfolio.git
 git push -u origin main
 ```
 
+> 如果仓库已存在且里面已有内容，可省略 `git init` 和 `git add ./git commit`，直接把本目录提交追加到该仓库。
+
 3. 在 GitHub 仓库页打开 **Settings → Pages**。
 4. Source 选 **Deploy from a branch**，Branch 选 **main**，目录选 **/(root)**，点 **Save**。
-5. 等待 1-2 分钟，站点地址为：
+5. 等待 1-2 分钟，站点地址为（仓库名 `portfolio` 时）：
 
 ```
-https://<你的用户名>.github.io/portfolio/
+https://heikaaaaaaaaaa.github.io/portfolio/
 ```
 
-> 直接把上面 `<你的用户名>` 换掉即可上线。海外访问稳定，本机也请把 index.html 里的联系方式改成你的真实邮箱和 GitHub。
+若仓库名为 `git`，地址为 `https://heikaaaaaaaaaa.github.io/git/`。
+
+> 海外访问稳定，国内也能打开（稍慢）。联系方式已填好：邮箱 `evan3023619119@gmail.com`，GitHub `github.com/heikaaaaaaaaaa`。
 
 ## 自定义域名（可选）/ Custom domain (optional)
 
-如果绑定了自己的域名，在 Settings → Pages → Custom domain 里填域名，再到域名 DNS 服务商加一条 CNAME 指向 `<你的用户名>.github.io`。
+如果绑定了自己的域名，在 Settings → Pages → Custom domain 里填域名，再到域名 DNS 服务商加一条 CNAME 指向 `heikaaaaaaaaaa.github.io`。
 
 ## 修改联系方式 / Update contact info
 
-编辑 `index.html` 里的 `contact` 区块，替换：
-
-```html
-<a class="btn btn-primary" href="mailto:your.email@example.com">📧 邮箱 Email</a>
-<a class="btn btn-ghost" href="https://github.com/your-username" ...>🐙 GitHub</a>
-```
-
-改成真实邮箱和 GitHub 地址即可。
+编辑 `index.html` 里的 `contact` 区块即可。
