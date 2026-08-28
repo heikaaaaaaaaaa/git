@@ -1,23 +1,14 @@
-# One-click push to GitHub Pages
-$ErrorActionPreference = "Stop"
-
-$site = $PSScriptRoot
+$ErrorActionPreference = "Continue"
 $user = "heikaaaaaaaaaa"
 $repo = "git"
 
-Set-Location $site
+Set-Location $PSScriptRoot
 
-# Make sure we're on main
-git branch -M main 2>$null
-
-# Re-point remote (in case it was set differently)
+# 确保在 main 分支，并指向正确的远程仓库
+git branch -M main
 git remote set-url origin "https://github.com/$user/$repo.git"
 
-# Reset remote tracking to force our content on top of the empty repo
-# (this replaces the placeholder README "# git" with the portfolio)
-git fetch origin main 2>$null
-git reset --soft origin/main 2>$null
-
+# 本地已是最新作品集，直接推送到远程 main
 git add .
 git commit -m "Add online portfolio website" 2>$null
 
